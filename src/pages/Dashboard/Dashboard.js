@@ -175,7 +175,6 @@ const Dashboard = () => {
                     value={value}
                     onChange={handleChange}
                     aria-label="Vertical tabs example"
-                    sx={{ borderRight: 0, borderColor: 'divider' }}
                 >
                     <Tab icon={<AccessTimeOutlinedIcon />} aria-label="time" {...a11yProps(0)} />
                     <Tab icon={<FolderCopyOutlinedIcon />} aria-label="folder" {...a11yProps(1)} />
@@ -236,7 +235,6 @@ const Dashboard = () => {
                                 </Box>
                             }
                             iconPosition="start"
-                            aria-label="finance"
                             {...a11yProps(1)}
                             sx={{ justifyContent: 'start', fontWeight: 'bold', textTransform: 'capitalize' }}
                         />
@@ -249,7 +247,6 @@ const Dashboard = () => {
                                 </Box>
                             }
                             iconPosition="start"
-                            aria-label="finance"
                             {...a11yProps(2)}
                             sx={{ justifyContent: 'start', fontWeight: 'bold', textTransform: 'capitalize' }}
                         />
@@ -262,7 +259,6 @@ const Dashboard = () => {
                                 </Box>
                             }
                             iconPosition="start"
-                            aria-label="finance"
                             {...a11yProps(3)}
                             sx={{ justifyContent: 'start', fontWeight: 'bold', textTransform: 'capitalize' }}
                         />
@@ -274,7 +270,7 @@ const Dashboard = () => {
                         variant="scrollable"
                         value={value2}
                         onChange={handleChange2}
-                        aria-label="Vertical tabs example 2"
+                        aria-label="Vertical tabs example 3"
                         selectionFollowsFocus
                     >
                         <Tab
@@ -286,7 +282,6 @@ const Dashboard = () => {
                                 </Box>
                             }
                             iconPosition="start"
-                            aria-label="finance"
                             {...a11yProps(4)}
                             sx={{ justifyContent: 'start', fontWeight: 'bold', textTransform: 'capitalize' }}
                         />
@@ -299,7 +294,6 @@ const Dashboard = () => {
                                 </Box>
                             }
                             iconPosition="start"
-                            aria-label="finance"
                             {...a11yProps(5)}
                             sx={{ justifyContent: 'start', fontWeight: 'bold', textTransform: 'capitalize' }}
                         />
@@ -312,7 +306,6 @@ const Dashboard = () => {
                                 </Box>
                             }
                             iconPosition="start"
-                            aria-label="finance"
                             {...a11yProps(6)}
                             sx={{ justifyContent: 'start', fontWeight: 'bold', textTransform: 'capitalize' }}
                         />
@@ -325,7 +318,6 @@ const Dashboard = () => {
                                 </Box>
                             }
                             iconPosition="start"
-                            aria-label="finance"
                             {...a11yProps(7)}
                             sx={{ justifyContent: 'start', fontWeight: 'bold', textTransform: 'capitalize' }}
                         />
@@ -338,7 +330,6 @@ const Dashboard = () => {
                                 </Box>
                             }
                             iconPosition="start"
-                            aria-label="finance"
                             {...a11yProps(8)}
                             sx={{ justifyContent: 'start', fontWeight: 'bold', textTransform: 'capitalize' }}
                         />
@@ -351,7 +342,6 @@ const Dashboard = () => {
                                 </Box>
                             }
                             iconPosition="start"
-                            aria-label="finance"
                             {...a11yProps(9)}
                             sx={{ justifyContent: 'start', fontWeight: 'bold', textTransform: 'capitalize' }}
                         />
@@ -363,7 +353,7 @@ const Dashboard = () => {
                         variant="scrollable"
                         value={value2}
                         onChange={handleChange2}
-                        aria-label="Vertical tabs example 2"
+                        aria-label="Vertical tabs example 4"
                         selectionFollowsFocus
                     >
                         <Tab
@@ -375,7 +365,6 @@ const Dashboard = () => {
                                 </Box>
                             }
                             iconPosition="start"
-                            aria-label="finance"
                             {...a11yProps(10)}
                             sx={{ justifyContent: 'start', fontWeight: 'bold', textTransform: 'capitalize' }}
                         />
@@ -388,7 +377,6 @@ const Dashboard = () => {
                                 </Box>
                             }
                             iconPosition="start"
-                            aria-label="finance"
                             {...a11yProps(11)}
                             sx={{ justifyContent: 'start', fontWeight: 'bold', textTransform: 'capitalize' }}
                         />
