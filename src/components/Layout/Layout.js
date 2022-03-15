@@ -20,11 +20,13 @@ import MailIcon from '@mui/icons-material/Mail';
 import SearchIcon from '@mui/icons-material/Search';
 import PeopleIcon from '@mui/icons-material/People';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { Avatar, Badge, Tab, Tabs, ListItemButton } from '@mui/material';
+import { Avatar, Badge, Tab, Tabs, } from '@mui/material';
 import { PhonelinkLockOutlined } from '@mui/icons-material';
 import FolderCopyOutlinedIcon from '@mui/icons-material/FolderCopyOutlined';
 import StarOutlineOutlinedIcon from '@mui/icons-material/StarOutlineOutlined';
 import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
+import { Link } from "react-router-dom";
+import Button from '@mui/material/Button';
 
 const drawerWidth = 240;
 const smallDrawerWidth = 90;
@@ -120,7 +122,7 @@ const Layout = ({ children }) => {
             <AppBar position="fixed" open={open} sx={open ? { paddingLeft: '0px' } : { paddingLeft: `${smallDrawerWidth}px` }}>
                 <Toolbar>
                     <Typography variant="h6" sx={{ flexGrow: 1 }} noWrap component="div">
-                        Dashboard
+                        <Button sx={{ color: '#fff' }} component={Link} to="/">Dashboard</Button>
                     </Typography>
                     <IconButton aria-label="search" color="inherit">
                         <SearchIcon />
@@ -176,7 +178,7 @@ const Layout = ({ children }) => {
                     <Tab icon={<StarOutlineOutlinedIcon />} aria-label="star" {...a11yProps(2)} />
                 </Tabs>
                 <DrawerHeader>
-                    <IconButton>
+                    <IconButton component={Link} to="/profile">
                         <Avatar alt="UserName" src="https://media.istockphoto.com/photos/millennial-male-team-leader-organize-virtual-workshop-with-employees-picture-id1300972574?b=1&k=20&m=1300972574&s=170667a&w=0&h=2nBGC7tr0kWIU8zRQ3dMg-C5JLo9H2sNUuDjQ5mlYfo=" />
                     </IconButton>
                 </DrawerHeader>
@@ -240,7 +242,7 @@ const Layout = ({ children }) => {
                 <DrawerHeader />
                 {children}
             </Main>
-        </Box>
+        </Box >
     );
 }
 
