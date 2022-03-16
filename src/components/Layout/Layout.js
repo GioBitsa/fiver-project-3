@@ -88,7 +88,7 @@ function TabPanel(props) {
             {...other}
         >
             {value === index && (
-                <Box sx={{ p: 3 }}>
+                <Box sx={{ px: 0, py: 3, }}>
                     <Typography>{children}</Typography>
                 </Box>
             )}
@@ -101,6 +101,41 @@ function a11yProps(index) {
         id: `vertical-tab-${index}`,
         'aria-controls': `vertical-tabpanel-${index}`,
     };
+}
+
+const tabPanelContent = {
+    tabPanel2: [
+        {
+            mainTitle: 'Finance inst.',
+            secondaryTitle: '15 elements',
+            icon: <FolderCopyOutlinedIcon />,
+        },
+        {
+            mainTitle: 'Strong',
+            secondaryTitle: '12 elements',
+            icon: <FolderCopyOutlinedIcon />,
+        },
+        {
+            mainTitle: 'Rising stars',
+            secondaryTitle: '8 elements',
+            icon: <FolderCopyOutlinedIcon />,
+        },
+        {
+            mainTitle: 'High risks',
+            secondaryTitle: '10 elements',
+            icon: <FolderCopyOutlinedIcon />,
+        },
+        {
+            mainTitle: 'Tech stars',
+            secondaryTitle: '12 elements',
+            icon: <FolderCopyOutlinedIcon />,
+        },
+        {
+            mainTitle: 'MISC',
+            secondaryTitle: '7 elements',
+            icon: <FolderCopyOutlinedIcon />,
+        },
+    ]
 }
 
 const Layout = ({ children }) => {
@@ -215,19 +250,22 @@ const Layout = ({ children }) => {
                 </TabPanel>
                 <TabPanel value={value} index={1}>
                     <List>
-                        {['Inbox', 'Starred', 'Send email',].map((text, index) => (
-                            <ListItem button key={text}>
+                        {tabPanelContent.tabPanel2.map((item, index) => (
+                            <ListItem button key={index}>
                                 <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                    {item.icon}
                                 </ListItemIcon>
-                                <ListItemText primary={text} />
+                                <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                                    <ListItemText primary={item.mainTitle} sx={{ fontWeight: 'bold' }} />
+                                    <ListItemText secondary={item.secondaryTitle} />
+                                </Box>
                             </ListItem>
                         ))}
                     </List>
                 </TabPanel>
                 <TabPanel value={value} index={2}>
                     <List>
-                        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                        {['Inbox', 'Strong', 'Rising stars', 'High risks', 'Tech stars', 'MISC'].map((text, index) => (
                             <ListItem button key={text}>
                                 <ListItemIcon>
                                     {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
