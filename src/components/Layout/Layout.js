@@ -7,12 +7,8 @@ import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
@@ -20,8 +16,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import SearchIcon from '@mui/icons-material/Search';
 import PeopleIcon from '@mui/icons-material/People';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { Avatar, Badge, Tab, Tabs, } from '@mui/material';
-import { PhonelinkLockOutlined } from '@mui/icons-material';
+import { Avatar, Badge, Tab, Tabs, ListItemButton, ListItem } from '@mui/material';
 import FolderCopyOutlinedIcon from '@mui/icons-material/FolderCopyOutlined';
 import StarOutlineOutlinedIcon from '@mui/icons-material/StarOutlineOutlined';
 import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
@@ -47,6 +42,7 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
             }),
             marginLeft: 0,
         }),
+        backgroundColor: 'white'
     }),
 );
 
@@ -65,6 +61,9 @@ const AppBar = styled(MuiAppBar, {
             duration: theme.transitions.duration.enteringScreen,
         }),
     }),
+    backgroundColor: theme.palette.background.default,
+    color: theme.palette.primary.main,
+    boxShadow: theme.palette.boxShadow.default,
 }));
 
 const DrawerHeader = styled('div')(({ theme }) => ({
@@ -141,7 +140,8 @@ const tabPanelContent = {
 const Layout = ({ children }) => {
     const theme = useTheme();
     const [open, setOpen] = React.useState(true);
-    const [value, setValue] = React.useState(0);
+    const [selected, setSelected] = React.useState(0);
+    const [value, setValue] = React.useState(1);
 
     const handleDrawerOpen = () => {
         setOpen(!open);
@@ -157,7 +157,7 @@ const Layout = ({ children }) => {
             <AppBar position="fixed" open={open} sx={open ? { paddingLeft: '0px' } : { paddingLeft: `${smallDrawerWidth}px` }}>
                 <Toolbar>
                     <Typography variant="h6" sx={{ flexGrow: 1 }} noWrap component="div">
-                        <Button sx={{ color: '#fff' }} component={Link} to="/">Dashboard</Button>
+                        <Button component={Link} to="/">Dashboard</Button>
                     </Typography>
                     <IconButton aria-label="search" color="inherit">
                         <SearchIcon />
@@ -182,6 +182,7 @@ const Layout = ({ children }) => {
                         width: smallDrawerWidth,
                         boxSizing: 'border-box',
                         justifyContent: 'space-between',
+                        border: 'none',
                     },
                     zIndex: 9999,
                     height: '100vh',
@@ -226,6 +227,8 @@ const Layout = ({ children }) => {
                         width: drawerWidth,
                         boxSizing: 'border-box',
                         marginLeft: `${smallDrawerWidth}px`,
+                        backgroundColor: `${theme.palette.background.default}`,
+                        border: 'none',
                     },
                 }}
                 variant="persistent"
@@ -235,11 +238,10 @@ const Layout = ({ children }) => {
                 <DrawerHeader>
                     <Typography>Your portfolios</Typography>
                 </DrawerHeader>
-                <Divider />
                 <TabPanel value={value} index={0}>
                     <List>
                         {['Inbox', 'Starred',].map((text, index) => (
-                            <ListItem button key={text}>
+                            <ListItem button key={text} sx={{ paddingTop: '15px', paddingBottom: '15px' }}>
                                 <ListItemIcon>
                                     {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                                 </ListItemIcon>
@@ -251,7 +253,12 @@ const Layout = ({ children }) => {
                 <TabPanel value={value} index={1}>
                     <List>
                         {tabPanelContent.tabPanel2.map((item, index) => (
-                            <ListItem button key={index}>
+                            <ListItem
+                                button
+                                key={index}
+                                selected={selected === index}
+                                sx={{ paddingTop: '15px', paddingBottom: '15px' }}
+                            >
                                 <ListItemIcon>
                                     {item.icon}
                                 </ListItemIcon>
@@ -266,7 +273,7 @@ const Layout = ({ children }) => {
                 <TabPanel value={value} index={2}>
                     <List>
                         {['Inbox', 'Strong', 'Rising stars', 'High risks', 'Tech stars', 'MISC'].map((text, index) => (
-                            <ListItem button key={text}>
+                            <ListItem button key={text} sx={{ paddingTop: '15px', paddingBottom: '15px' }}>
                                 <ListItemIcon>
                                     {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                                 </ListItemIcon>
