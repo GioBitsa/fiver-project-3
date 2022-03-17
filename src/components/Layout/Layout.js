@@ -16,7 +16,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import SearchIcon from '@mui/icons-material/Search';
 import PeopleIcon from '@mui/icons-material/People';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { Avatar, Badge, Tab, Tabs, ListItemButton, ListItem } from '@mui/material';
+import { Avatar, Badge, Tab, Tabs, ListItem } from '@mui/material';
 import FolderCopyOutlinedIcon from '@mui/icons-material/FolderCopyOutlined';
 import StarOutlineOutlinedIcon from '@mui/icons-material/StarOutlineOutlined';
 import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
@@ -257,6 +257,7 @@ const Layout = ({ children }) => {
                                 button
                                 key={index}
                                 selected={selected === index}
+                                onClick={() => setSelected(1)}
                                 sx={{ paddingTop: '15px', paddingBottom: '15px' }}
                             >
                                 <ListItemIcon>

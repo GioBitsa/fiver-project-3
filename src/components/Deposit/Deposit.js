@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from '@mui/material/Link';
+// import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -7,9 +7,9 @@ import Button from '@mui/material/Button';
 import CardContent from '@mui/material/CardContent';
 import Title from '../Title/Title';
 
-const preventDefault = (event) => {
-    event.preventDefault();
-}
+// const preventDefault = (event) => {
+//     event.preventDefault();
+// }
 
 const Deposit = () => {
     return (
